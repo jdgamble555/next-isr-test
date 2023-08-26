@@ -1,8 +1,6 @@
 import { Validate } from "./validate";
 
-export const revalidate = false;
-
-export default function Home() {
+export default async function Home() {
 
   const n = Math.random();
 
