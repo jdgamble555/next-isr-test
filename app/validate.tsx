@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export function Validate() {
 
-    let [invalidated, setInvalidated] = useState(false);
+    const [invalidated, setInvalidated] = useState(false);
 
     return (
         <>
