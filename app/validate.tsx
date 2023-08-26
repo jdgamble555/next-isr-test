@@ -6,15 +6,17 @@ export function Validate() {
 
     const [invalidated, setInvalidated] = useState(false);
 
+    const invalidate = async () => {
+        const r = await fetch(window.location.origin + '/api/revalidate');
+        const x = await r.json();
+        if (x.revalidated) {
+            setInvalidated(true);
+        }
+    };
+
     return (
         <>
-            <button type="submit" onClick={() => fetch(window.location.origin + '/api/revalidate').then(async (r) => {
-                const x = await r.json();
-                if (x.revalidated) {
-                    setInvalidated(true);
-                }
-            }
-            )}>
+            <button type="submit" onClick={invalidate}>
                 Invalidate
             </button>
             <button onClick={() => window.location.reload()}>Refresh</button>
