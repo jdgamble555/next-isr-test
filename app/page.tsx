@@ -1,5 +1,7 @@
 import { Validate } from "./validate";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
 
   const n = Math.random();
