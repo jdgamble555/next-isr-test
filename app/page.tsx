@@ -1,6 +1,6 @@
 import { Validate } from "./validate";
 
-export const revalidate = 3600;
+export const revalidate = false;
 
 export default function Home() {
 
