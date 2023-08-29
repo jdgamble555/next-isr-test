@@ -7,7 +7,9 @@ export function Validate() {
     const [invalidated, setInvalidated] = useState(false);
 
     const invalidate = async () => {
-        const r = await fetch(window.location.origin + '/api/revalidate');
+        const r = await fetch(window.location.origin + '/api/revalidate', {
+            method: 'POST'
+        });
         const x = await r.json();
         if (x.revalidated) {
             setInvalidated(true);
