@@ -1,6 +1,5 @@
 'use client';
 
-import { experimental_useFormStatus as useFormStatus } from 'react-dom';
 import { useState } from "react";
 import { revalidate } from "./revalidate";
 
@@ -8,12 +7,14 @@ export function Validate() {
 
     const [invalidated, setInvalidated] = useState(false);
 
-   const data = useFormStatus();
-   console.log(data);
+   async function revalidateAction() {
+    const res = await revalidate();
+    console.log(res);
+   }
 
     return (
         <>
-            <form action={revalidate}>
+            <form action={revalidateAction}>
                 <button type="submit">Invalidate</button>
                 <button onClick={() => window.location.reload()}>Refresh</button>
             </form>
