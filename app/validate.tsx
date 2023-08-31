@@ -1,27 +1,22 @@
 'use client';
 
+import { experimental_useFormStatus as useFormStatus } from 'react-dom';
 import { useState } from "react";
+import { revalidate } from "./revalidate";
 
 export function Validate() {
 
     const [invalidated, setInvalidated] = useState(false);
 
-    const invalidate = async () => {
-        const r = await fetch(window.location.origin + '/api/revalidate', {
-            method: 'POST'
-        });
-        const x = await r.json();
-        if (x.revalidated) {
-            setInvalidated(true);
-        }
-    };
+   const data = useFormStatus();
+   console.log(data);
 
     return (
         <>
-            <button type="submit" onClick={invalidate}>
-                Invalidate
-            </button>
-            <button onClick={() => window.location.reload()}>Refresh</button>
+            <form method="post" action={revalidate}>
+                <button type="submit">Invalidate</button>
+                <button onClick={() => window.location.reload()}>Refresh</button>
+            </form>
             {invalidated && <p style={{ 'color': 'red' }}>invalidated!</p>}
         </>
     );
