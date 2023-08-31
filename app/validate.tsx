@@ -13,7 +13,7 @@ export function Validate() {
 
     return (
         <>
-            <form method="post" action={revalidate}>
+            <form action={revalidate}>
                 <button type="submit">Invalidate</button>
                 <button onClick={() => window.location.reload()}>Refresh</button>
             </form>
