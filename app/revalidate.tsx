@@ -1,9 +1,9 @@
 'use server';
 
-import { revalidatePath } from "next/cache";
+//import { revalidatePath } from "next/cache";
 
 export async function revalidate() {
-    revalidatePath('/');
+    //revalidatePath('/');
     return {
         success: true
     };
