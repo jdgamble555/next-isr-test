@@ -1,15 +1,16 @@
 'use client';
 
 import { useState } from "react";
-import { revalidate } from "./revalidate";
+//import { revalidate } from "./revalidate";
 
 export function Validate() {
 
     const [invalidated, setInvalidated] = useState(false);
 
    async function revalidateAction() {
-    const res = await revalidate();
-    console.log(res);
+    //const res = await revalidate();
+    //console.log(res);
+    console.log('gest')
    }
 
     return (
