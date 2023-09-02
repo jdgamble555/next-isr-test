@@ -1,4 +1,5 @@
-import { Validate } from "./validate";
+import Link from "next/link";
+import { RefreshButton } from "./refresh-button";
 
 export default async function Home() {
 
@@ -7,10 +8,12 @@ export default async function Home() {
   return (
     <>
       <h1>Welcome to NextJS</h1>
-
       <p>Random Number: {n}</p>
-      <Validate />
+      <div className="flex">
+        <Link href={'/revalidate'}>Revalidate</Link>
+        <RefreshButton />
+      </div>
     </>
-  )
+  );
 }
 
