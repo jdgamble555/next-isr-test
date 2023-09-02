@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 
-export default function server() {
+export default async function server() {
     return <></>;
 }
 
