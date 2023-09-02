@@ -10,8 +10,6 @@ export function Validate() {
 
    async function revalidateAction() {
     const res = await revalidate();
-    //console.log(res);
-    console.log('gest')
    }
 
     return (
