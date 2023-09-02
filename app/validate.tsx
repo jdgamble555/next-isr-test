@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import { revalidate } from "./revalidate/page";
+import { revalidate } from "./revalidate";
 
 
 export function Validate() {
@@ -10,6 +10,7 @@ export function Validate() {
 
    async function revalidateAction() {
     const res = await revalidate();
+    console.log(res);
    }
 
     return (
